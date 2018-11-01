@@ -1,0 +1,247 @@
+\chapter{Appendix}
+
+\section{Astrophysical Constants}
+
+\newcommand{\va}{\boldsymbol{a}}
+\newcommand{\vb}{\boldsymbol{b}}
+\newcommand{\vc}{\boldsymbol{c}}
+\newcommand{\vd}{\boldsymbol{d}}
+
+\newcommand{\vA}{\boldsymbol{A}}
+\newcommand{\vB}{\boldsymbol{B}}
+\newcommand{\vn}{\boldsymbol{n}}
+\newcommand{\vl}{\boldsymbol{l}}
+
+\newcommand{\ux}{\boldsymbol{\hat{x}}}
+\newcommand{\uy}{\boldsymbol{\hat{y}}}
+\newcommand{\uz}{\boldsymbol{\hat{z}}}
+\newcommand{\urh}{\boldsymbol{\hat{\rho}}}
+\newcommand{\up}{\boldsymbol{\hat{\phi}}}
+\newcommand{\urr}{\boldsymbol{\hat{r}}}
+\newcommand{\ut}{\boldsymbol{\hat{\theta}}}
+\newcommand{\st}{\sin{\theta}}
+\newcommand{\boldT}{\boldsymbol{T}}
+
+\begin{deluxetable}{ll | ll}
+%\tabletypesize{\footnotesize}
+\tabletypesize{\scriptsize}
+\tablecolumns{4}
+\tablewidth{0pt}
+\tablehead{\multicolumn{4}{c}{\bf{Physical and Astrophysical constants}} \\
+           \colhead{Constant} & \colhead{CGS unit} & \colhead{Constant} & \colhead{CGS unit}}
+\startdata
+c$_{0}$ (speed of light in vacuum) & $2.99792458\times10^{10}$ cm s$^{-1}$ &
+h (Plank constant) & $6.6260755\times10^{-27}$ erg s \\
+e (electron charge) & $4.80320680\times10^{-10}$ esu &
+$\alpha$ (fine structure constant) & 1/137.03598951 \\
+m$_{e}$ (electron mass) & $9.1093897\times10^{-28}$ g &
+r$_{e}$ (classical electron radius) & $2.81794092\times10^{-13}$ cm \\ 
+m$_{p}$ (proton mass) & $1.672631\times10^{-24}$ g &
+Bohr radius & $0.529177249\times10^{-8}$ cm \\
+m$_{n}$ (neutron mass) & $1.6749286\times10^{-24}$ g &
+G (gravitational const) & $6.67259\times10^{-8}$ cm$^3$g$^{-1}$s$^{-2}$ \\
+m$_{d}$ (deuteron mass) & $3.34358602\times10^{-24}$ g &
+G'(gravitational const) \tablenotemark{**} & $4.298$ M$_{\odot}^{-1}$pc$^{2}$km$^{2}$s$^{-2}$kpc$^{-1}$ \\
+u (unified atomic mass) & $1.6605402\times10^{-24}$ g &
+N$_A$ (Abogadro const) & $6.0221367\times10^{23}$ mol$^{-1}$ \\
+k (Boltzmann constant) & $1.380658\times10^{-16}$ erg K$^{-1}$ &
+b (Wien disp. law const) & $0.2897756$ cm K \\
+$\sigma_{\textrm{SB}}$ (Stefan-Boltzman const) & $5.67\times10^{-5}$ erg s$^{-1}$cm$^{-2}$K$^{-4}$ &
+AU (astronomical unit) & $1.4959787066\times10^{13}$ cm \\
+Jy (Jansky) & $10^{-23}$ erg s$^{-1}$ cm$^{-2}$ Hz$^{-1}$ &
+pc (parsec) & $3.0856775807\times10^{18}$ cm \\
+M$_{\odot}$ (Solar mass) & $1.98892\times10^{33}$ g &
+ly (light year) & $0.9461\times10^{18}$ cm \\
+M$_{\textrm{Earth}}$ (Earth mass) & $5.97370\times10^{27}$ g &
+ev (electron volt) & $1.602\times10^{-12}$ erg \\
+M$_{\textrm{Moon}}$ (Moon mass) & $7.348\times10^{25}$ g &
+Plank Mass & $2.17671\times10^{-5}$ g \\
+L$_{\odot}$ (Solar luminosity) & $3.846\times10^{33}$ erg s$^{-1}$ &
+Plank length & $1.61605\times10^{-33}$ cm \\
+R$_{\odot}$ (Solar radius) & $6.955\times10^{10}$ cm &
+Plank time & $5.39056\times10^{-44}$ s \\
+$\sigma_{\textrm{T}}$ (Thompson Cross section) & $6.65246154\times10^{-25}$ cm$^{2}$ &
+J (Joule) & $10^7$ erg \\
+$\epsilon_{0}$ (permittivity of vacuum) \tablenotemark{*} & $8.854\times10^{-12}$ C$^{2}$m$^{-2}$N$^{-1}$ &
+N (Newton) & $10^5$ dyne \\
+$\mu_{0}$ (permeability of vacuum) \tablenotemark{*} & $4\pi\times10^{-7}$ H m$^{-1}$ &
+yr (year) & $3.155693\times10^{7}$ s \\
+Tesla & $10^4$ Gauss &
+\enddata
+\tablenotetext{*}{ SI unit ; In cgs unit, $\epsilon_{0}$ and $\mu_{0}$ are unity. }
+\tablenotetext{**}{ special unit }
+\end{deluxetable}
+
+\clearpage
+
+\section{Vector Identity}
+~~~~
+\bigskip
+
+\begin{eqnarray}
+\va \cdot \left( \vb \times \vc \right) &=& 
+    \vb \cdot \left( \vc \times \va \right) = \vc \cdot \left( \va \times \vb \right) \nonumnext
+\va \times \left( \vb \times \vc \right) &=& 
+\left( \va \cdot \vc \right)\vb - \left( \va \cdot \vb \right)\vc \nonumber \nonumnext 
+\left( \va \times \vb \right) \cdot \left( \vc \times \vd \right) &=& 
+\left( \va \cdot \vc \right) \left( \vb \cdot \vd \right) - \left( \va \cdot \vd \right) \left( \vb \cdot \vc \right) \nonumnext
+\nabla \times \nabla \psi &=& 0 \nonumnext
+\nabla \cdot \left( \nabla \times \va \right) &=& 0 \nonumnext 
+\nabla \times \left( \nabla \times \va \right) &=&
+\nabla \left( \nabla \cdot \va \right) - \nabla^{2} \va \nonumnext
+\nabla \cdot \left( \psi \va \right) &=& \va \cdot \nabla \psi + \psi \nabla \cdot \va \nonumnext
+\nabla \times \left( \psi \va \right) &=& \nabla \psi \times \va + \psi \nabla \times \va \nonumnext
+\nabla\left( \va \cdot \vb \right) &=& 
+\left( \va \cdot \nabla \right)\vb + \left( \vb \cdot \nabla \right)\va
++ \va \times \left( \nabla \times \vb \right) + \vb \times \left( \nabla \times \va \right) \nonumnext
+\nabla \cdot \left( \va \times \vb \right) &=& 
+\vb \cdot \left( \nabla \times \va \right) - \va \cdot \left( \nabla \times \vb \right) \nonumnext
+\nabla\times\left( \va \times \vb \right) &=&
+\va\left( \nabla \cdot \vb \right) - \vb\left( \nabla \cdot \va \right)
++\left( \vb \cdot \nabla \right)\va - \left( \va \cdot \nabla \right)\vb  \nonumber
+\end{eqnarray}
+
+\clearpage
+
+\section{Vector Calculus}
+~~~~
+\bigskip
+
+\begin{eqnarray}
+\int_{V} \nabla \cdot \vA ~d^{3}x &=& \int_{S} \vA \cdot \vn ~da 
+\textrm{~~~~~~~~~~~~~~~~~~~~~~~~~(Divergence Theorem)} \nonumnext
+\int_{V} \nabla \psi d^{3}x &=& \int_{S} \psi \vn ~da  \nonumnext
+\int_{V} \nabla \times \vA ~d^{3}x &=& \int_{S} \vn \times \vA ~da \nonumnext 
+\int_{V} \left( \phi \nabla^{2}\psi + \nabla\phi \cdot \nabla\psi \right) d^{3}x &=&
+\int_{S} \phi \vn\cdot\nabla\psi da
+\textrm{~~~~~~~~~~~~~~~~~~~~~~(Green's first identity)} \nonumnext
+\int_{V} \left( \phi \nabla^{2}\psi - \psi\nabla^{2}\phi \right) d^{3}x &=&
+\int_{S} \left( \phi\nabla\psi - \psi\nabla\phi \right) \cdot \vn ~da 
+\textrm{~~~~~~~~~(Green's theorem)} \nonumnext
+\int_{S} \left( \nabla \times \vA \right) \cdot \vn ~da &=& \oint_{C} \vA \cdot d\vl 
+\textrm{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(Stokes's theorem)} \nonumnext
+\int_{S} \vn \times \nabla \psi da &=& \oint_{C} \psi d\vl \nonumber
+\end{eqnarray}
+
+\clearpage
+
+\section{Coordinate System}
+
+~~~~
+\bigskip
+\subsection{Cartesian (x,y,z)}
+
+\begin{eqnarray}
+\nabla \psi &=& \frac{\partial\psi}{\partial x}\ux + \frac{\partial\psi}{\partial y}\uy + \frac{\partial\psi}{\partial z}\uz \nonumnext
+\nabla \cdot \vA &=& \frac{\partial A_{x}}{\partial x} + \frac{\partial A_{y}}{\partial y} + \frac{\partial A_{z}}{\partial z} \nonumnext
+\nabla \times \vA &=& \left( \frac{\partial A_{z}}{\partial y} - \frac{\partial A_{y}}{\partial z} \right)\ux
+                    + \left( \frac{\partial A_{x}}{\partial z} - \frac{\partial A_{z}}{\partial x} \right)\uy
+                    + \left( \frac{\partial A_{y}}{\partial x} - \frac{\partial A_{x}}{\partial y} \right)\uz \nonumnext
+(\vA \cdot \nabla)\, \vB &=& \left( A_{x}\frac{\partial B_{x}}{\partial x} 
+                                + A_{y}\frac{\partial B_{x}}{\partial y} 
+                                + A_{z}\frac{\partial B_{x}}{\partial z} \right) \ux 
+                          +\left( A_{x}\frac{\partial B_{y}}{\partial x} 
+                                + A_{y}\frac{\partial B_{y}}{\partial y} 
+                                + A_{z}\frac{\partial B_{y}}{\partial z} \right) \uy \nonumnext
+                        &&+\left( A_{x}\frac{\partial B_{z}}{\partial x} 
+                                + A_{y}\frac{\partial B_{z}}{\partial y} 
+                                + A_{z}\frac{\partial B_{z}}{\partial z} \right) \uz \nonumnext
+\nabla^{2}\psi &=& \frac{\partial^{2} \psi}{\partial x^{2}} + \frac{\partial^{2} \psi}{\partial y^{2}} + \frac{\partial^{2} \psi}{\partial z^{2}} \nonumnext
+\nabla \cdot \boldT_{i,j} &=& 
+     \left( \frac{\partial T_{xx}}{\partial x} 
+     + \frac{\partial T_{yx}}{\partial y} + \frac{\partial T_{zx}}{\partial z} \right) \ux 
+    +\left( \frac{\partial T_{xy}}{\partial x} 
+     + \frac{\partial T_{yy}}{\partial y} + \frac{\partial T_{zy}}{\partial z} \right) \uy \nonumnext
+    &&+\left( \frac{\partial T_{xz}}{\partial x} 
+     + \frac{\partial T_{yz}}{\partial y} + \frac{\partial T_{zz}}{\partial z} \right) \uz \nonumber
+\end{eqnarray}
+
+%\begin{center}
+%\line(1,0){400}
+%\end{center}
+
+~~~~
+\bigskip
+\subsection{Cylindrical ($\rho$,$\phi$,z)}
+
+\begin{eqnarray}
+\nabla \psi &=& \frac{\partial\psi}{\partial \rho}\urh + \frac{1}{\rho}\frac{\partial\psi}{\partial \phi}\up 
+              + \frac{\partial\psi}{\partial z}\uz \nonumnext
+\nabla \cdot \vA &=& \frac{1}{\rho}\frac{\partial}{\partial \rho}\left( {\rho A_{\rho}} \right) 
+                   + \frac{1}{\rho}\frac{\partial A_{\phi}}{\partial \phi} + \frac{\partial A_{z}}{\partial z} \nonumnext
+\nabla \times \vA &=& \left( \frac{1}{\rho}\frac{\partial A_{z}}{\partial \phi} - \frac{\partial A_{\phi}}{\partial z} \right)\urh
+                    + \left( \frac{\partial A_{\rho}}{\partial z} - \frac{\partial A_{z}}{\partial \rho} \right)\up
+                    + \frac{1}{\rho}\left( \frac{\partial}{\partial \rho}\left( \rho A_{\phi} \right) 
+                      - \frac{\partial A_{\rho}}{\partial \phi} \right)\uz \nonumnext
+(\vA \cdot \nabla)\, \vB &=& \left( A_{\rho}\frac{\partial B_{\rho}}{\partial \rho} 
+                                + \frac{A_{\phi}}{\rho}\frac{\partial B_{\rho}}{\partial \phi} 
+                                + A_{z}\frac{\partial B_{\rho}}{\partial z} 
+                                - \frac{A_{\phi}B_{\phi}}{\rho} \right) \urh   \nonumnext
+                          &&+\left( A_{\rho}\frac{\partial B_{\phi}}{\partial \rho} 
+                                + \frac{A_{\phi}}{\rho}\frac{\partial B_{\phi}}{\partial \phi} 
+                                + A_{z}\frac{\partial B_{\phi}}{\partial z} 
+                                + \frac{A_{\phi}B_{\rho}}{\rho} \right) \up  \nonumnext
+                          &&+\left( A_{\rho}\frac{\partial B_{z}}{\partial \rho} 
+                                + \frac{A_{\phi}}{\rho}\frac{\partial B_{z}}{\partial \phi} 
+                                + A_{z}\frac{\partial B_{z}}{\partial z} \right) \uz \nonumnext
+\nabla^{2}\psi &=& \frac{1}{\rho}\frac{\partial}{\partial \rho} \left( \rho \frac{\partial \psi}{\partial \rho} \right) 
+                 + \frac{1}{\rho^{2}}\frac{\partial^{2} \psi}{\partial \phi^{2}} + \frac{\partial^{2} \psi}{\partial z^{2}} \nonumnext
+\nabla \cdot \boldT_{i,j} &=& 
+     \left\{ \frac{1}{\rho} \frac{\partial}{\partial \rho} (\rho\,T_{\rho z}) 
+     + \frac{1}{\rho} \frac{\partial T_{\phi z}}{\partial \phi} + \frac{\partial T_{zz}}{\partial z}   \right\} \urh \nonumnext
+    &&+\left\{ \frac{1}{\rho} \frac{\partial}{\partial \rho} (\rho\,T_{\rho \rho}) 
+     + \frac{1}{\rho} \frac{\partial T_{\phi\rho}}{\partial \phi} + \frac{\partial T_{z \rho}}{\partial z} 
+     - \frac{T_{\phi\phi}}{\rho} \right\} \up \nonumnext
+    &&+\left\{ \frac{\partial T_{\rho \phi}}{\partial \rho} 
+     + \frac{1}{\rho} \frac{\partial T_{\phi \phi}}{\partial \phi} + \frac{\partial T_{z\phi}}{\partial z} 
+     + \frac{T_{\phi\rho} + T_{\rho\phi}}{\rho}  \right\} \uz \nonumber
+\end{eqnarray}
+
+%\begin{center}
+%\line(1,0){400}
+%\end{center}
+
+~~~~
+\bigskip
+\subsection{Spherical (r,$\theta$,$\phi$)}
+
+\begin{eqnarray}
+\nabla \psi &=& \frac{\partial \psi}{\partial r}\urr + \frac{1}{r}\frac{\partial\psi}{\partial \theta}\ut 
+              + \frac{1}{r \st}\frac{\partial\psi}{\partial \phi}\up \nonumnext
+\nabla \cdot \vA &=& \frac{1}{r^{2}}\frac{\partial}{\partial r}\left( r^{2} A_{r} \right) 
+                   + \frac{1}{r \st}\frac{\partial}{\partial \theta}\left( \st A_{\theta} \right) 
+                   + \frac{1}{r \st}\frac{\partial A_{\phi}}{\partial \phi} \nonumnext
+\nabla \times \vA &=& \frac{1}{r \st}\left( \frac{\partial}{\partial \theta}\left( \st A_{\phi} \right) 
+                      - \frac{\partial A_{\theta}}{\partial \phi} \right)\urr
+                    + \left( \frac{1}{r \st}\frac{\partial A_{r}}{\partial \phi} 
+                      - \frac{1}{r}\frac{\partial}{\partial r}\left( r A_{\phi} \right) \right)\ut \nonumnext
+                  &&+ \frac{1}{r}\left( \frac{\partial}{\partial r}\left( r A_{\theta} \right)  
+                      - \frac{\partial A_{r}}{\partial \theta} \right)\up \nonumnext
+(\vA \cdot \nabla)\, \vB &=& \left( A_{r}\frac{\partial B_{r}}{\partial r} 
+                                + \frac{A_{\theta}}{r}\frac{\partial B_{r}}{\partial \theta} 
+                                + \frac{A_{\phi}}{r\,\sin{\theta}}\frac{\partial B_{r}}{\partial \phi} 
+                                - \frac{A_{\theta}B_{\theta}+A_{\phi}B_{\phi}}{r} \right) \urr \nonumnext
+                          &&+\left( A_{r}\frac{\partial B_{\theta}}{\partial r} 
+                                + \frac{A_{\theta}}{r}\frac{\partial B_{\theta}}{\partial \theta} 
+                                + \frac{A_{\phi}}{r\,\sin{\theta}}\frac{\partial B_{\theta}}{\partial \phi} 
+                                + \frac{A_{\theta}B_{r} - A_{\phi}B_{\phi}\,\cot{\theta}}{r} \right) \ut \nonumnext
+                          &&+\left( A_{r}\frac{\partial B_{\phi}}{\partial r} 
+                                + \frac{A_{\theta}}{r}\frac{\partial B_{\phi}}{\partial \theta} 
+                                + \frac{A_{\phi}}{r\,\sin{\theta}}\frac{\partial B_{\phi}}{\partial \phi} 
+                                + \frac{A_{\phi}B_{r} + A_{\phi}B_{\theta}\,\cot{\theta}}{r} \right) \up \nonumnext
+\nabla^{2}\psi &=& \frac{1}{r^{2}}\frac{\partial}{\partial r}\left( r^{2} \frac{\partial \psi}{\partial r} \right) 
+                 + \frac{1}{r^{2} \st}\frac{\partial}{\partial \theta}\left( \st \frac{\partial \psi}{\partial \theta} \right) 
+                 + \frac{1}{r^{2} \sin^{2}\theta}\frac{\partial^{2} \psi}{\partial \phi^{2}} \nonumnext
+&& \textrm{Note that}~\frac{1}{r^{2}}\frac{\partial}{\partial r}\left( r^{2}\frac{\partial \psi}{\partial r} \right) \equiv
+                      \frac{1}{r}\frac{\partial^{2}}{\partial r^{2}}\left( r \psi \right) \nonumnext
+    \nabla \cdot \boldT_{i,j} &=& 
+    \left\{ \frac{\partial T_{rr}}{\partial r} + \frac{1}{r}\frac{\partial T_{r\theta}}{\partial \theta} 
+    + \frac{1}{r\st}\frac{\partial T_{r\phi}}{\partial \phi} 
+    + \frac{2\,T_{rr}+\cot{\theta}\,T_{r\theta}-T_{\theta\theta}-T_{\phi\phi}}{r}  \right\}\,\urr \nonumnext 
+    &&+ \left\{ \frac{\partial T_{\theta r}}{\partial r} + \frac{1}{r}\frac{\partial T_{\theta\theta}}{\partial \theta} 
+    + \frac{1}{r\st}\frac{\partial T_{\theta\phi}}{\partial \phi} 
+    + \frac{T_{r\theta}+2T_{\theta r}+\cot{\theta}(T_{\theta\theta}-T_{\phi\phi})}{r}  \right\}\,\ut  \nonumnext
+    &&+ \left\{ \frac{\partial T_{\phi r}}{\partial r} + \frac{1}{r}\frac{\partial T_{\phi\theta}}{\partial \theta} 
+    + \frac{1}{r\st}\frac{\partial T_{\phi\phi}}{\partial \phi} 
+    + \frac{T_{r\phi}+2T_{\phi r}+\cot{\theta}(T_{\theta\phi}+T_{\phi\theta})}{r}  \right\}\,\up.  \nonumber 
+\end{eqnarray}

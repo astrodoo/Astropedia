@@ -1,0 +1,267 @@
+\chapter{Radiation}
+
+\section{Radiation}
+
+\subsection{Basic Radiation Properties}
+
+\begin{empheq}[innerbox=\fbox]{align}
+\textrm{Radiation: Energy transport by electromagnetic fields} \nonumber
+\end{empheq}
+
+\subsubsection{Wave-particle duality and the radiative limit}
+
+Since we measure radiation only through the interaction with matter, wave propagation in vacuum is not
+all that interesting. When radiation interacts with matter, quantum mechanics can become important.
+
+As Planck found, photon phase space is granular, with a fundamental quantized phase space volume of $h^{3}$.
+Photon energy is,
+\begin{empheq}[innerbox=\fbox]{align}
+E_{\nu} = h\,\nu
+\end{empheq}
+Photons are relativistic, thus their momentum is directly proportional to their energy:
+\begin{empheq}[innerbox=\fbox]{align}
+P_{\nu} = \frac{h\nu}{c}
+\end{empheq}
+
+\subsubsection{Observables and basic definitions of radiation quantities}
+
+\begin{enumerate}[a)]
+   \item Specific intensity or surface brightness: $I_{\nu}$
+   
+   Define a quantity that describes completely how the measured energy $dE$ depends on $\vec{r},\hat{\vec{k}},\nu,t$ and 
+describes the radiation field as completely as possible (neglecting polarization) given the information from the detector:
+
+\begin{equation}\label{eq:intensity}
+   I_{\nu}(\vec{r},t,\hat{\vec{k}},\nu) \equiv \frac{dE}{d\nu\,dt\,d\Omega\,dA}
+\end{equation}
+where the surface $dA$ is taken \textbf{perpendicular} to the direction of the ray $\hat{k}$.
+
+   \item Mean intensity: $J_{\nu}$
+
+   $\Rightarrow~~$ The zeroth moment of $I_{\nu}$ with respect to the polar angle $\cos\theta$:
+
+\begin{equation}
+   J_{\nu} \equiv \frac{1}{4\pi} \int_{4\pi} d\Omega\, I_{\nu}
+\end{equation}
+where the solid angle is,
+\begin{equation}
+   d\Omega = \sin\theta d\theta d\phi
+\end{equation}
+
+   \item Specific flux: $F_{\nu}$
+
+   $\Rightarrow~~$ The first moment of $I_{\nu}$ with respect to $\cos\theta$.
+
+   Energy flux at frequency $\nu$ across a surface $dA$, integrated over all photon directions (coming from both sides of the surface).
+\begin{equation}
+   F_{\nu} \equiv \int_{4\pi} d\Omega\,\cos\theta\,I_{\nu}
+\end{equation}
+where $\theta$ is measured relative to the normal of $dA$.
+
+For an unresolved object, we can typically not determine the solid angle spanned by the object. The flux
+is therefore the most general quantity we can derive directly from any measurements for the object.
+
+\begin{empheq}[innerbox=\fbox]{align}
+F_{\nu}=0~~ \textrm{for isotropic radiation.}
+\end{empheq}
+
+Sometimes it is useful to define a photon number flux. Since $e_{\nu}=h\nu$, this is simply
+\begin{equation}
+   \Phi_{\nu} = F_{\nu}/h\nu
+\end{equation}
+
+   \item Total flux: $F$ 
+\begin{equation}
+   F \equiv \int^{\infty}_{0} d\nu\,F_{\nu} = \left[ \frac{dE}{dt\,dA} \right]  
+\end{equation}
+   \item Radiation pressure: $P_{rad}$ - Total momentum flux across $dA$
+\begin{equation}
+   P_{rad} = \int^{\infty}_{0} d\nu \int_{4\pi}d\Omega \cos^{2}{\theta}\frac{I_{\nu}}{c}
+\end{equation}
+   \item Radiative energy density: $u_{\nu}$ - Amount of radiative energy contained per unit volume
+\begin{equation}
+   u_{\nu} = \int d u_{\nu} = \int_{4\pi} d\Omega\frac{I_{\nu}}{c} = \frac{dE}{dA\,ds\,d\nu} = \frac{dE}{dV\,d\nu}
+\end{equation}
+where $ds = cdt$ 
+
+   The energy density of {\bf blackbody radiation} per frequency interval is,
+\begin{empheq}[innerbox=\fbox]{align}
+    u_{\nu} = \frac{8\pi\nu^{2}}{c^{3}}\frac{h\nu}{e^{h\nu/kT}-1}
+\end{empheq}
+The specific intensity, eq.~(\ref{eq:intensity}), is related with the energy density via
+\begin{equation}
+    I_{\nu} = c\frac{d\,u_{\nu}}{d\Omega}
+\end{equation}
+Since the solid angle of a full sphere is $4\pi$ steradians, the intensity of blackbody radiation is
+therefore
+\begin{empheq}[innerbox=\fbox]{align}\label{eq:planckf}
+    I_{\nu}=\frac{c}{4\pi}u_{\nu}=\frac{2h\,\nu^{3}}{c^{2}}\frac{1}{e^{h\nu/kT}-1} \equiv B_{\nu}
+\end{empheq}
+which is called as {\bf Planck function}. In terms of wavelength, eq.~(\ref{eq:planckf}) can be re-written by
+\begin{equation}
+    B_{\lambda} = B_{\nu} \left|\frac{d\nu}{d\lambda}\right| = B_{\nu}\frac{c}{\lambda^{2}}=\frac{2h\,c^{2}}{\lambda^{5}}\frac{1}{e^{hc/\lambda kT}-1}
+\end{equation}
+
+For isotropic radiation, $u=3\,P_{rad}$.
+
+\begin{eqnarray}
+   P_{rad} &=& \int_{4\pi} d\Omega \cos^2{\theta}\frac{I}{c} = \frac{I}{c}\int^{\pi}_{0} \sin{\theta}\cos^{2}{\theta} d\theta \int^{2\pi}_{0}d\phi \nonumnext
+           &=& \frac{2\pi I}{c}\int^{1}_{-1} x^{2} dx = \frac{I}{c} \frac{4\pi}{3}
+\end{eqnarray}
+where $x \equiv \cos{\theta}$
+
+\begin{equation}
+   u = \int_{4\pi} d\Omega \frac{I}{c} = \frac{I}{c}4\pi
+\end{equation}
+
+Therefore,
+\begin{equation}
+   \therefore u=3\,P_{rad} ~~~~\rm for~isotropic~radiation
+\end{equation}
+
+   \item Photon density: $n_{\nu}$
+number of photons per unit frequency interval per unit volume. 
+\begin{equation} 
+   n_{\nu} = \frac{u_{\nu}}{h\nu}
+\end{equation}
+   \item Luminosity: $L_{\nu}$
+Specific (spectral) luminosity
+\begin{equation}
+  L_{\nu} = \oint dA F_{\nu} = \left[ \frac{dE}{dt\,d\nu}\right]
+\end{equation}
+and total, ``bolometric'' luminosity:
+\begin{equation}
+  L = \oint dA F = \left[ \frac{dE}{dt}\right]
+\end{equation}
+   \item Spectral index:$\alpha$
+
+It is often convenient to plot spectra on a log-log plot in frequency, $\log F_{\nu}$ vs. $\log \nu$.
+Many emission process produce power-law type spectra over some frequency range,
+\begin{equation}
+   F_{\nu} \propto \nu^{-\alpha}
+\end{equation}
+which appear as straight lines in a log-log plot. It is then useful to define a local spectral index
+\begin{equation}
+   \alpha \equiv -\frac{\partial \log{F_{\nu}}}{\partial \log{\nu}}
+\end{equation}
+sometimes it is also useful to define a photon index $\Gamma$
+\begin{equation}
+   \Gamma \equiv -\frac{\partial \log{\Phi_{\nu}}}{\partial \log{\nu}} = -\frac{\partial \left( \log{F_{\nu}} - \log{h\nu} \right)}{\partial \log{\nu}} = \alpha +1 
+\end{equation}
+
+   \item $\nu - \lambda$ conversions:
+ 
+Given $\lambda\,\nu = c$, we can express specific quantity $f_{\nu} = df/d\nu$ with respect to wavelength instead:
+\begin{equation}
+   f_{\nu} = \frac{df}{d\nu} = \frac{df}{d\lambda}\frac{d\lambda}{d\nu} \equiv f_{\lambda}\frac{\lambda^2}{c}
+\end{equation}
+
+\end{enumerate}
+
+\bigskip
+\subsection{Basic laws}
+{\bf Stefan-Boltzmann law:}
+\begin{empheq}[innerbox=\fbox]{align}\label{eq:planck}
+    u = a\,T^{4}
+\end{empheq}
+which relates the total energy density of flux of a blackbody to its temperature.
+\medskip
+
+\noi {\bf Wien's law:}
+The wavelength or frequency of the peak of a blackbody spectrum can be found by taking its derivative and equating to zero
+in eq.~(\ref{eq:planck}).
+\begin{empheq}[left=\empheqlbrace]{align}
+    \lambda_{max}\, T  &=  0.29 ~ {\rm cm\,K}  \\
+   h\,\nu_{max} &= 2.8~k\, T
+\end{empheq}
+
+\noi {\bf Rayleigh-Jeans approximation:}
+At frequencies $\nu$ much lower than the peak (i.e., at photon energies $h\nu \ll kT$) in blackbody spectrum eq.~(\ref{eq:planck}),
+\begin{equation}
+    B_{\nu}\approx \frac{2\nu^{2}}{c^{2}}\,k\,T ~~~{\rm or,}~~ B_{\lambda}\approx 2\,c\,k\,T\lambda^{-4}
+\end{equation}
+
+\noi {\bf Wien tail:}
+At frequencies $\nu$ much higher than the peak (i.e., at photon energies $h\nu \gg kT$) in blackbody spectrum eq.~(\ref{eq:planck}),
+\begin{equation}
+    B_{\nu}\sim e^{-h\nu/kT} ~~~{\rm or,}~~ B_{\lambda} \sim e^{-hc/\lambda kT}
+\end{equation}
+
+\noi {\bf Inverse square law:}
+\begin{equation}
+   F_{\nu} = \frac{L_{\nu}}{4\pi r^{2}}
+\end{equation}
+
+\noi {\bf Magnitudes:}
+
+Astronomers have long measured optical fluxes in logarithmic units (magnitudes). This was particularly convenient before
+the age of calculators but has stuck around somehow like many archaic scientific habits.
+
+\begin{eqnarray}
+   m_{\lambda} &=& -2.5\log{F_{\lambda}} - C_{\lambda} \\
+   m_{\nu} &=& -2.5\log{F_{\nu}} - C_{\nu}
+\end{eqnarray}
+where the constants $C_{\nu,\lambda}$ depend on the specific filter used and the assumed spectrum of the object.
+
+\bigskip
+\subsection{Kinds of Radiation}
+\subsubsection{hydrogen lines}
+The $n$th energy level of the hydrogen atom ($n$=1 is the ground state) is given by the Bohr formula,
+\begin{equation}
+    E_{n}=-\frac{e^{4}\,m_{e}}{2 \hbar^{2}}\frac{1}{n^{2}} = -13.6\,{\rm eV}\frac{1}{n^{2}}
+\end{equation}
+The energy difference between two levels is 
+\begin{equation}
+    E_{n1,n2} = 13.6\,{\rm eV}\left( \frac{1}{n_{1}^{2}} - \frac{1}{n_{2}^{2}} \right).
+\end{equation}
+The wavelength of a photon emitted or absorbed in a radiative transition between two levels will be
+\begin{equation}
+    \lambda_{n1,n2} = \frac{h\,c}{E_{n1,n2}}=\frac{911.5 {\rm \angstrom}}{1/n_{1}^{2}-1/n_{2}^2}.
+\end{equation}
+
+\begin{table}[ht] 
+    \caption{Lyman series \{transition to the ground level (n=1)\}}
+  \centering  
+  \begin{tabular}{c c c} 
+  \hline \hline  
+%head  
+    label & transition & wavelength \\ 
+  \hline 
+%data  
+    Ly$\alpha$ & 2 $\leftrightarrow$ 1 & 1216 $\angstrom$ \\
+    Ly$\beta$  & 3 $\leftrightarrow$ 1 & 1025 $\angstrom$ \\
+    Ly$\gamma$ & 4 $\leftrightarrow$ 1 &  972 $\angstrom$ \\
+  \hline 
+  \end{tabular} 
+\end{table}
+Up until the {\bf Lyman continuum} (transition from infinity to the ground level ($n=\infty\leftrightarrow1)$,
+Ly$_{\rm con}$ = 911.5 $\angstrom$.
+
+\begin{table}[ht] 
+    \caption{Balmer series \{transition to the ground level (n=2)\}}
+  \centering  
+  \begin{tabular}{c c c} 
+  \hline \hline  
+%head  
+    label & transition & wavelength \\ 
+  \hline 
+%data  
+    H$\alpha$ & 3 $\leftrightarrow$ 2 & 6563 $\angstrom$ \\
+    H$\beta$  & 4 $\leftrightarrow$ 2 & 4861 $\angstrom$ \\
+    H$\gamma$ & 5 $\leftrightarrow$ 2 & 4340 $\angstrom$ \\
+  \hline 
+  \end{tabular} 
+\end{table}
+Up until the {\bf Balmer continuum} (transition from infinity to the second level ($n=\infty\leftrightarrow2)$,
+Ba$_{\rm con}$ = 3646 $\angstrom$.
+
+
+\subsubsection{Thermal Bremstrahlung}
+to be described
+\subsubsection{Synchrotron}
+to be described
+\subsubsection{21 hydrogen line}
+to be described
+
+%\bibliographystyle{apj}
+%\bibliography{citations}

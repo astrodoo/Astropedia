@@ -1,0 +1,413 @@
+\chapter{Gravity}
+
+\section{Gravity}
+\subsection{Newtonian gravity}
+A mass m' at position $\rb'$ exerts on any other mass m at position $\rb$ an attractive
+force $\Fb=m {\bf g}(\rb)$; the gravitational acceleration {\bf g(r)} can be written as the 
+gradient of a potential function, ${\bf g} = -\nabla \Psi$, where
+\begin{equation}\label{eq:grav}
+   \Psi = \frac{G m'}{|\rb - \rb'|},
+\end{equation}
+\begin{equation}\label{eq:gravf}
+   \therefore |\nabla \Psi| = \frac{G m'}{|\rb - \rb'|^2}.
+\end{equation}
+Let S be a spherical surface of radius ${\rb - \rb'}$ centered at {\bf r'}, then we have
+\begin{equation}
+   \int_{S} \nb \cdot \nabla \Psi dS = 4 \pi G m'.
+\end{equation}
+It can also be verified directly that the gravitational potential of our point mass (eq 
+\ref{eq:grav}) satisfies $\nabla \cdot \nabla \Psi \equiv \nabla^2 \Psi = 0$ (the Laplace equation)
+everywhere except for just one point, $\rb=\rb'$. By using divergence theorem, eq \ref{eq:gravf} can 
+be expressed as,
+\begin{equation}\label{eq:poisson}
+   \int_{V} \nabla^2 \Psi\, dV = 4 \pi G \int_{V} \rho \,dV,
+\end{equation}
+where V is volume inside S. Since V is arbitrary, this equation can be rewritten as a 
+partial differential equation, {\bf Poisson's equation:}
+\begin{equation}
+   \nabla^2 \Psi = 4 \pi G \rho
+\end{equation}
+
+\bigskip
+\subsection{Simple models of astrophysical fluid and their motions}
+In the previous lecture we established the continuity equation (\ref{eq:continuity2}), the momentum
+equation (\ref{eq:momentum}), the energy equation (\ref{eq:totE}), and Poisson's equation (\ref{eq:poisson}).
+Assuming that the only body forces are due to self-gravity, so that $\fb=-\nabla \Psi$ in 
+eq. \ref{eq:momentum}, these equations are:
+\begin{empheq}[left=\empheqlbrack,right=\empheqrbrack]{align}
+    \frac{D\rho}{Dt}+\rho\nabla\cdot\ub &= 0, \\
+    \rho \frac{D \ub}{Dt} &= -\nabla P - \rho \nabla \Psi, \label{eq:mom2}\\
+    \frac{DU}{Dt}-\frac{P}{\rho^2}\frac{D\rho}{Dt} &= \varepsilon - \frac{1}{\rho} \nabla \cdot \Fb,
+      \label{eq:totE2} \\
+    \nabla^2 \Psi &= 4 \pi G \rho. \label{eq:poisson2}
+\end{empheq}
+Note that these contain seven dependent variables ($\rho, P, \Psi, U$,and three components
+of $\ub$).  The three equations from momentum equation, together with the rest equations,
+provide six equations, and a seventh is the equation of state (\eg that for an ideal gas)
+which provides a relation between any three thermodynamic state variables, so that for instance
+the internal energy U and temperature T can be written in terms of P and $\rho$.($\varepsilon$
+and $\Fb$ are assumed to be known functions of the other variables). Thus one might hope in
+principle to solve these equations, given suitable boundary conditions. In practice this set of
+equations is intractable to exact solution, and one must resort to numerical solutions. Even
+these can be extremely problematic so that, for example, understanding turbulent flows is
+still a very challenging research area. Moreover, an analytic solution to a somewhat idealized
+problem may teach one much more than a numerical solution. One useful idealization is where we
+assume that the fluid velocity and all time derivatives are zero. These are called equilibrium
+solutions and describe a steady an astrophysical system evolves may be very long, so that at
+any particular time the state of many astrophysical fluid bodies may be well represented by an
+equilibrium model. Even when the dynamical behaviour of the body is important, it can often be
+described in terms of small departures from an equilibrium state.
+
+\bigskip
+\subsection{Hydrostatic equilibrium for a self-gravitating body}
+
+If we suppose that $\ub=0$ every where, and that all quantities are independent of time,
+eq. \ref{eq:mom2} becomes
+\begin{equation}\label{eq:hse}
+  \nabla P + \rho \nabla \Psi = 0
+\end{equation}
+the continuity equation becomes trivial. A fluid satisfying eq. \ref{eq:hse} is said to
+be in {\bf hydrostatic equilibrium}. If it is self-gravitating (so that $\Psi$ is determined
+by the density distribution within the fluid), then eq. \ref{eq:poisson2} must also be satisfied.
+
+Putting $\ub=0$ and $\partial/\partial t$=0, \ie $D/Dt=0$, in eq. \ref{eq:totE2}, we obtain
+that the heat sources given by $\varepsilon$ must be exactly balance by the heat flux term
+$\rho^{-1}\nabla \cdot \Fb$. If this holds, then the fluid is also said to be in thermal
+equilibrium (See \S \ref{sec:thermaleq}).
+
+\bigskip
+\subsection{The formation of protostars}
+
+\subsubsection{Stellar time scales}
+
+\textbf{a) dynamical time scale}
+
+The length of time over which changes in one part of a body can be communicated to the rest of that body.
+That is also called, freefall time scale.
+
+Assuming $|dP/dr| \ll G M_{r}\rho/r^{2}$, where $M_{r}$ is the mass of the spherical cloud,
+\begin{equation}
+   \frac{d^2 r}{dt^{2}} = -G \frac{M_{r}}{r^{2}} = -\frac{G}{r^{2}} \frac{4\pi}{3} \rho_{0} r_{0}^{3}, 
+\end{equation}
+where, $r_{0}$ and $\rho_{0}$ is the initial radius and density of the sphere. Multiplying the velocity 
+of the surface  of the sphere for both sides,
+\begin{equation}
+   \frac{dr}{dt}\frac{d^2 r}{dt^{2}} = -\frac{G}{r^{2}} \frac{4\pi}{3} \rho_{0} r_{0}^{3} \frac{dr}{dt},
+\end{equation}
+which can be integrated to give
+\begin{equation}
+   \frac{1}{2}\left( \frac{dr}{dt} \right)^{2} = \left( \frac{4\pi}{3}G\rho_{0}r_{0}^{3} \right)\frac{1}{r} + C_{1}.
+\end{equation}
+where $C_{1}$ can be evaluated by, $dr/dt=0$ when $r=r_{0}$. This gives
+\begin{equation}
+   C_{1} = -\frac{4\pi}{3} G \rho_{0} r_{0}^2.
+\end{equation}
+therefore,
+\begin{equation}
+   \frac{dr}{dt} = - \left[ \frac{8\pi}{3}G \rho_{0} r_{0}^{2} \left( \frac{r_{0}}{r} -1 \right) \right]^{1/2}.
+\end{equation}
+Substituting $\theta \equiv r/r_{0}$ and $K \equiv \left( \frac{8\pi}{3} G \rho_{0} \right)^{1/2}$ gives,
+\begin{equation}
+   \frac{d\theta}{dt} = - K \left( \frac{1}{\theta} -1 \right)^{1/2}.
+\end{equation}
+Making another substitution, $\theta \equiv \cos^2{\phi}$, then
+\begin{equation}
+   \cos^{2}{\phi} \frac{d\phi}{dt} = \frac{K}{2}.
+\end{equation}
+This will be integrated to yield
+\begin{equation}
+   \frac{\sin{2\phi}}{4} + \frac{\phi}{2} = \frac{K}{2}t + C_{2}.
+\end{equation}
+where $C_{2}$ can be evaluated by, $r=r_{0}$ when $t=0$ implying $\theta=1$ or $\phi=0$ at the beginning of the collapse,
+then gives $C_{2}=0$.
+
+Consequently, the freefall time scale or dynamical time scale can be calculated by, $\theta=0$ or $\phi = \pi/2$,
+\begin{eqnarray}\label{eq:fftime}
+   t_{dyn} = t_{ff} &=& \frac{\pi}{2\,K} \nonumnext
+                    &=& \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2}.
+\end{eqnarray}
+
+\textbf{b) thermal time scale}
+
+The time scale on which the star would contract if its nuclear energy sources were turned off. And 
+it is also called, kelvin-Helmholtz time scale:
+
+\begin{equation}
+   t_{KH} \approx \frac{G M^{2}/R_{*}}{L}.
+\end{equation}
+
+\textbf{c) nuclear time scale}
+The heat released by fusing a mass $\triangle M c^{2}$. Therefore the time required to exhaust all the star's 
+hydrogen is
+\begin{equation}
+   t_{nuc} = \frac{0.007 M c^{2}}{L}
+\end{equation}
+
+\subsubsection{Jean's Instability}\label{subsubsec:Jean}
+
+Two methods will be described to derive Jean's Mass.
+
+\textbf{a) From virial theorem}
+
+The potential energy is,
+\begin{equation}
+   dU = G \frac{M_{interior}M_{shell}}{r}.
+\end{equation}
+Integrating the equation, 
+\begin{equation}
+   U = G \int^{0}_{R} \frac{4/3\pi r^{3}\rho ~4\pi r^{2} \rho\,dr}{r} = -\frac{3}{5} \frac{G M^{2}}{R},
+\end{equation}
+where $\rho = M / (\frac{4}{3}\pi R^{3})$.
+
+The kinetic energy is
+\begin{equation}
+   K = N_{H}~\frac{3}{2}kT = \frac{M}{\mu m_{H}}~\frac{3}{2}kT.
+\end{equation}
+Using a virial theorem, 2K+U=0,
+\begin{equation}
+   \frac{3}{5}\frac{G M^{2}}{R} = 3 \frac{M k T}{\mu m_{H}},
+\end{equation}
+therefore, the Jean's mass can be calculated to
+\begin{equation}
+   M_{J} = \left( \frac{5 k T}{G\mu m_{H}} \right)^{3/2} \left( \frac{3}{4\pi \rho} \right)^{1/2},
+\end{equation}
+because $R=\left( M/(\frac{4}{3}\pi \rho) \right)^{1/3}$. The following length is
+\begin{equation}
+   R_{J} = \left( \frac{M_{J}}{\frac{4}{3}\pi\rho} \right)^{1/3} = \left( \frac{5 k T}{G\mu m_{H}} \right)^{1/2} \left( \frac{3}{4\pi\rho} \right)^{1/2},
+\end{equation}
+where the Jean's length, $\lambda_{J} = 2 R_{J}$.
+
+\textbf{b) From freefall time}
+
+The freefall time scale is, from Eqn. \ref{eq:fftime}, 
+\begin{equation}
+  t_{ff} = \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2}.
+\end{equation}
+In order to collapse the cloud, the freefall time scale should be less than the crossing time scale which 
+is the time scale in which the information propagates from edge to edge, that is
+\begin{equation}
+   t_{cs} = \frac{\lambda_{J}}{Cs},
+\end{equation}
+where $Cs$ is the sound speed of $\sqrt{\frac{kT}{\mu m_{H}}}$. As a result,
+\begin{equation}
+   \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2} = \frac{\lambda_{J}}{Cs}
+\end{equation}
+or,
+\begin{equation}
+   \lambda_{J} = \left( \frac{3\pi k T}{32 G \rho \mu m_{H}} \right)^{1/2}.
+\end{equation}
+
+\bigskip
+\subsection{Special relativity}
+to be described
+
+\bigskip
+\subsection{General relativity}
+to be described
+section{Gravity}
+\subsection{Newtonian gravity}
+A mass m' at position $\rb'$ exerts on any other mass m at position {\bf r} an attractive
+force $\Fb=m{ {\bf g}(\rb)}$; the gravitational acceleration ${\bf g}(\rb)$ can be written as the 
+gradient of a potential function, ${\bf g} = -\nabla \Psi$, where
+\begin{equation}\label{eq:grav}
+   \Psi = \frac{G m'}{|\rb - \rb'|},
+\end{equation}
+\begin{equation}\label{eq:gravf}
+   \therefore |\nabla \Psi| = \frac{G m'}{|\rb - \rb'|^2}.
+\end{equation}
+Let S be a spherical surface of radius $|\rb - \rb'|$ centered at $\rb'$, then we have
+\begin{equation}
+   \int_{S} \nb \cdot \nabla \Psi dS = 4 \pi G m'.
+\end{equation}
+It can also be verified directly that the gravitational potential of our point mass (eq 
+\ref{eq:grav}) satisfies $\nabla \cdot \nabla \Psi \equiv \nabla^2 \Psi = 0$ (the Laplace equation)
+everywhere except for just one point, $\rb=\rb'$. By using divergence theorem, eq \ref{eq:gravf} can 
+be expressed as,
+\begin{equation}\label{eq:poisson}
+   \int_{V} \nabla^2 \Psi\, dV = 4 \pi G \int_{V} \rho \,dV,
+\end{equation}
+where V is volume inside S. Since V is arbitrary, this equation can be rewritten as a 
+partial differential equation, {\bf Poisson's equation:}
+\begin{equation}
+   \nabla^2 \Psi = 4 \pi G \rho
+\end{equation}
+
+\bigskip
+\subsection{Simple models of astrophysical fluid and their motions}
+In the previous lecture we established the continuity equation (\ref{eq:continuity2}), the momentum
+equation (\ref{eq:momentum}), the energy equation (\ref{eq:totE}), and Poisson's equation (\ref{eq:poisson}).
+Assuming that the only body forces are due to self-gravity, so that $\fb=-\nabla \Psi$ in 
+eq. \ref{eq:momentum}, these equations are:
+\begin{empheq}[left=\empheqlbrack,right=\empheqrbrack]{align}
+    \frac{D\rho}{Dt}+\rho\nabla\cdot\ub &= 0, \\
+    \rho \frac{D \ub}{Dt} &= -\nabla P - \rho \nabla \Psi, \label{eq:mom2}\\
+    \frac{DU}{Dt}-\frac{P}{\rho^2}\frac{D\rho}{Dt} &= \varepsilon - \frac{1}{\rho} \nabla \cdot \Fb,
+      \label{eq:totE2} \\
+    \nabla^2 \Psi &= 4 \pi G \rho. \label{eq:poisson2}
+\end{empheq}
+Note that these contain seven dependent variables ($\rho, P, \Psi, U$,and three components
+of $\ub$).  The three equations from momentum equation, together with the rest equations,
+provide six equations, and a seventh is the equation of state (\eg that for an ideal gas)
+which provides a relation between any three thermodynamic state variables, so that for instance
+the internal energy U and temperature T can be written in terms of P and $\rho$.($\varepsilon$
+and $\Fb$ are assumed to be known functions of the other variables). Thus one might hope in
+principle to solve these equations, given suitable boundary conditions. In practice this set of
+equations is intractable to exact solution, and one must resort to numerical solutions. Even
+these can be extremely problematic so that, for example, understanding turbulent flows is
+still a very challenging research area. Moreover, an analytic solution to a somewhat idealized
+problem may teach one much more than a numerical solution. One useful idealization is where we
+assume that the fluid velocity and all time derivatives are zero. These are called equilibrium
+solutions and describe a steady an astrophysical system evolves may be very long, so that at
+any particular time the state of many astrophysical fluid bodies may be well represented by an
+equilibrium model. Even when the dynamical behaviour of the body is important, it can often be
+described in terms of small departures from an equilibrium state.
+
+\bigskip
+\subsection{Hydrostatic equilibrium for a self-gravitating body}
+
+If we suppose that $\ub=0$ every where, and that all quantities are independent of time,
+eq. \ref{eq:mom2} becomes
+\begin{equation}\label{eq:hse}
+  \nabla P + \rho \nabla \Psi = 0
+\end{equation}
+the continuity equation becomes trivial. A fluid satisfying eq. \ref{eq:hse} is said to
+be in {\bf hydrostatic equilibrium}. If it is self-gravitating (so that $\Psi$ is determined
+by the density distribution within the fluid), then eq. \ref{eq:poisson2} must also be satisfied.
+
+Putting $\ub=0$ and $\partial/\partial t$=0, \ie D/Dt=0, in eq. \ref{eq:totE2}, we obtain
+that the heat sources given by $\varepsilon$ must be exactly balance by the heat flux term
+$\rho^{-1}\nabla \cdot \Fb$. If this holds, then the fluid is also said to be in thermal
+equilibrium (See \S \ref{sec:thermaleq}).
+
+\bigskip
+\subsection{The formation of protostars}
+
+\subsubsection{Stellar time scales}
+
+\textbf{a) dynamical time scale}
+
+The length of time over which changes in one part of a body can be communicated to the rest of that body.
+That is also called, freefall time scale.
+
+Assuming $|dP/dr| \ll G M_{r}\rho/r^{2}$, where $M_{r}$ is the mass of the spherical cloud,
+\begin{equation}
+   \frac{d^2 r}{dt^{2}} = -G \frac{M_{r}}{r^{2}} = -\frac{G}{r^{2}} \frac{4\pi}{3} \rho_{0} r_{0}^{3}, 
+\end{equation}
+where, $r_{0}$ and $\rho_{0}$ is the initial radius and density of the sphere. Multiplying the velocity 
+of the surface  of the sphere for both sides,
+\begin{equation}
+   \frac{dr}{dt}\frac{d^2 r}{dt^{2}} = -\frac{G}{r^{2}} \frac{4\pi}{3} \rho_{0} r_{0}^{3} \frac{dr}{dt},
+\end{equation}
+which can be integrated to give
+\begin{equation}
+   \frac{1}{2}\left( \frac{dr}{dt} \right)^{2} = \left( \frac{4\pi}{3}G\rho_{0}r_{0}^{3} \right)\frac{1}{r} + C_{1}.
+\end{equation}
+where $C_{1}$ can be evaluated by, $dr/dt=0$ when $r=r_{0}$. This gives
+\begin{equation}
+   C_{1} = -\frac{4\pi}{3} G \rho_{0} r_{0}^2.
+\end{equation}
+therefore,
+\begin{equation}
+   \frac{dr}{dt} = - \left[ \frac{8\pi}{3}G \rho_{0} r_{0}^{2} \left( \frac{r_{0}}{r} -1 \right) \right]^{1/2}.
+\end{equation}
+Substituting $\theta \equiv r/r_{0}$ and $K \equiv \left( \frac{8\pi}{3} G \rho_{0} \right)^{1/2}$ gives,
+\begin{equation}
+   \frac{d\theta}{dt} = - K \left( \frac{1}{\theta} -1 \right)^{1/2}.
+\end{equation}
+Making another substitution, $\theta \equiv \cos^2{\phi}$, then
+\begin{equation}
+   \cos^{2}{\phi} \frac{d\phi}{dt} = \frac{K}{2}.
+\end{equation}
+This will be integrated to yield
+\begin{equation}
+   \frac{\sin{2\phi}}{4} + \frac{\phi}{2} = \frac{K}{2}t + C_{2}.
+\end{equation}
+where $C_{2}$ can be evaluated by, $r=r_{0}$ when $t=0$ implying $\theta=1$ or $\phi=0$ at the beginning of the collapse,
+then gives $C_{2}=0$.
+
+Consequently, the freefall time scale or dynamical time scale can be calculated by, $\theta=0$ or $\phi = \pi/2$,
+\begin{eqnarray}\label{eq:fftime}
+   t_{dyn} = t_{ff} &=& \frac{\pi}{2\,K} \nonumnext
+                    &=& \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2}.
+\end{eqnarray}
+
+\textbf{b) thermal time scale}
+
+The time scale on which the star would contract if its nuclear energy sources were turned off. And 
+it is also called, kelvin-Helmholtz time scale:
+
+\begin{equation}
+   t_{KH} \approx \frac{G M^{2}/R_{*}}{L}.
+\end{equation}
+
+\textbf{c) nuclear time scale}
+The heat released by fusing a mass $\triangle M c^{2}$. Therefore the time required to exhaust all the star's 
+hydrogen is
+\begin{equation}
+   t_{nuc} = \frac{0.007 M c^{2}}{L}
+\end{equation}
+
+\subsubsection{Jean's Instability}\label{subsubsec:Jean}
+
+Two methods will be described to derive Jean's Mass.
+
+\textbf{a) From virial theorem}
+
+The potential energy is,
+\begin{equation}
+   dU = G \frac{M_{interior}M_{shell}}{r}.
+\end{equation}
+Integrating the equation, 
+\begin{equation}
+   U = G \int^{0}_{R} \frac{4/3\pi r^{3}\rho ~4\pi r^{2} \rho\,dr}{r} = -\frac{3}{5} \frac{G M^{2}}{R},
+\end{equation}
+where $\rho = M / (\frac{4}{3}\pi R^{3})$.
+
+The kinetic energy is
+\begin{equation}
+   K = N_{H}~\frac{3}{2}kT = \frac{M}{\mu m_{H}}~\frac{3}{2}kT.
+\end{equation}
+Using a virial theorem, 2K+U=0,
+\begin{equation}
+   \frac{3}{5}\frac{G M^{2}}{R} = 3 \frac{M k T}{\mu m_{H}},
+\end{equation}
+therefore, the Jean's mass can be calculated to
+\begin{equation}
+   M_{J} = \left( \frac{5 k T}{G\mu m_{H}} \right)^{3/2} \left( \frac{3}{4\pi \rho} \right)^{1/2},
+\end{equation}
+because $R=\left( M/(\frac{4}{3}\pi \rho) \right)^{1/3}$. The following length is
+\begin{equation}
+   R_{J} = \left( \frac{M_{J}}{\frac{4}{3}\pi\rho} \right)^{1/3} = \left( \frac{5 k T}{G\mu m_{H}} \right)^{1/2} \left( \frac{3}{4\pi\rho} \right)^{1/2},
+\end{equation}
+where the Jean's length, $\lambda_{J} = 2 R_{J}$.
+
+\textbf{b) From freefall time}
+
+The freefall time scale is, from Eqn. \ref{eq:fftime}, 
+\begin{equation}
+  t_{ff} = \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2}.
+\end{equation}
+In order to collapse the cloud, the freefall time scale should be less than the crossing time scale which 
+is the time scale in which the information propagates from edge to edge, that is
+\begin{equation}
+   t_{cs} = \frac{\lambda_{J}}{Cs},
+\end{equation}
+where $Cs$ is the sound speed of $\sqrt{\frac{kT}{\mu m_{H}}}$. As a result,
+\begin{equation}
+   \left( \frac{3\pi}{32} \frac{1}{G \rho_{0}}\right)^{1/2} = \frac{\lambda_{J}}{Cs}
+\end{equation}
+or,
+\begin{equation}
+   \lambda_{J} = \left( \frac{3\pi k T}{32 G \rho \mu m_{H}} \right)^{1/2}.
+\end{equation}
+
+\bigskip
+\subsection{Special relativity}
+to be described
+
+\bigskip
+\subsection{General relativity}
+to be described
+
+%\bibliographystyle{apj}
+%\bibliography{citations}

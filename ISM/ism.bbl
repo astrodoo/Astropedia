@@ -1,0 +1,12 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Dalgarno} \& {McCray}(1972)}]{Dalgarno:72}
+{Dalgarno}, A., \& {McCray}, R.~A. 1972, \araa, 10, 375
+
+\bibitem[{{Schure} {et~al.}(2009){Schure}, {Kosenko}, {Kaastra}, {Keppens}, \&
+  {Vink}}]{Schure:09}
+{Schure}, K.~M., {Kosenko}, D., {Kaastra}, J.~S., {Keppens}, R., \& {Vink}, J.
+  2009, \aap, 508, 751
+
+\end{thebibliography}

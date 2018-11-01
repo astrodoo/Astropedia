@@ -1,0 +1,46 @@
+\chapter{Mathematical physics}
+
+\section{Mathematical physics}
+
+\subsection{Moment of Inertia}
+
+Moment of inertia is the name given to rotational inertia, the rotational analog of mass for
+linear motion.  It appears in the relationships for the dynamics of rotational motion. The
+moment of inertia must be specified with respect to a chosen axis of rotation. For a point
+mass, the moment of inertia is just the mass times the square of perpendicular distance to
+the rotation axis, $I=m\,r^{2}$. That point mass relationship becomes the basis for all other
+moment of inertia since any object can be built up from a collection of point masses. For the
+extended source, we have to integrate through the volume,
+
+\begin{equation}
+   I = \int dI = \int^{M}_{0}r^{2}dm
+\end{equation}
+
+\subsubsection{sphere}
+
+To derive the moment of inertia of a solid sphere of uniform density and radius R,
+\begin{equation}
+   dI = r^{2}_{\perp} dm = r^{2}_{\perp}\rho\,dV
+\end{equation}
+where $r_{\perp}$ is the perpendicular distance to a point at $\vec{r}$ from the axis of rotation.
+Therefore, $r_{\perp}= |\vec{r}|\,\sin{\theta}$. Integrating over the volume,
+\begin{eqnarray}
+   I &=& \int \int \int_{V} \rho\,r^{2}_{\perp}\,dV = \rho \int^{2\pi}_{0}\int^{\pi}_{0}\int^{R}_{0} \left( r\,\sin{\theta} \right)^{2}\,r^{2}\,\sin{\theta}drd\theta d\phi \nonumnext
+     &=& 2\pi\rho \int^{\pi}_{0} \sin^{3}{\theta}d\theta \int^{R}_{0}r^{4}dr ~~~~~~~~~ \leftarrow \textrm{substituting } u=\cos{\theta} \nonumnext
+     &=& 2\pi\rho \frac{R^{5}}{5}\int^{1}_{-1} \left( 1 - u^{2} \right) du = \frac{4}{3}\pi R^{3}\rho\left( \frac{2}{5} R^{2}\right) \nonumnext
+     &=& \frac{2}{5}M\,R^{2}
+\end{eqnarray}
+where $M$ is the total mass of the sphere.
+
+
+\bigskip
+\subsection{Potential of Uniform Sphere}\label{subsec:potunisp}
+To be updated
+\begin{equation}
+    U = -\frac{3}{5} \frac{G\,M}{R}
+\end{equation}
+
+\bigskip
+\subsection{Fourier decomposition}
+
+

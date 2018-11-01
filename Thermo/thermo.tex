@@ -1,0 +1,57 @@
+\chapter{Thermo Dynamics}
+\section{Thermo Dynamics}
+
+Noting that the volume per unit mass is just the reciprocal of the density, \ie $\rm V = \rho^{-1}$, 
+we recognise that the thermal energy equation (\ref{eq:thermalE}) as a statement of {\bf the first law of
+thermodynamics:}
+\begin{equation}\label{eq:thermo1}
+  dU = -P dV + \delta Q,
+\end{equation}
+that is, the change in the internal energy is equal to the work-pdV done (on the fluid) plus the heat 
+added. Note that p,V,U are properties of the fluid (in fact they are thermodynamic state variables) and we 
+denote changes in them with the symbol d. In contrast, there is no such property as the heat content and 
+so we cannot speak of the change of heat content. Instead, we can only speak of the heat added, and we
+therefore use a different notation, \ie $\delta$Q. {\bf The second law of thermodynamics} states that
+\begin{equation}\label{eq:eq:thermo2}
+  \delta Q = T dS,
+\end{equation}
+where S is a thermodynamic state variable, the {\it specific entropy} (\ie the entropy per unit mass).
+Combining this with the first law, eq. \ref{eq:thermo1}, yields
+\begin{equation}\label{eq:thermo}
+  dU = TdS - PdV.
+\end{equation}
+
+\bigskip
+\subsection{Thermal Equilibrium}\label{sec:thermaleq}
+T.E.: Medium characterized by a single temperature and every process occurs at the same rate
+as its inverse process ($\rm T_{e} = T_{k} = T_{i} = T_{r}$).
+
+\begin{itemize}
+   \item $T_{e}$(excite T): Level population following by Boltzmann's distribution. \\
+   \begin{equation}
+      \frac{n_{2}}{n_{1}} = \frac{g_{2}}{g_{1}} e^{-E/kT_{e}}
+   \end{equation}
+   \item $T_{k}$(kinetic T): Particle velocity following by Boltzmann-Maxwellian velocity distribution. \\
+   \begin{equation}
+      f = 4\pi\left( \frac{m}{2\pi k T_{k}} \right)^{3/2} v^{2} e^{-mv^{2}/2 k T_{k}} ~~~~\textrm{or,} ~~~~\frac{1}{2} m v^{2} =\frac{3}{2} k T_{k}
+   \end{equation}
+   $~~~~~~~~~~~~~~~~~~$ Doppler-Broadening: FWHM = $2 \sqrt{2 ln 2}\, \sigma$, where $\sigma = \sqrt{kT/m}$
+   \item $T_{i}$(ionization T): Ionizational fraction by Saha equation
+   \begin{equation}
+      \frac{n_{z+1}n_{e}}{n_{z}} = \frac{2g_{z+1}}{g_{z}}\left( \frac{2\pi m_{e}k T_{i}}{h^{2}} \right)^{3/2} e^{-\chi/k T_{i}}
+   \end{equation}
+   \item $T_{r}$(radiational T): Radiation field by Planck function
+   \begin{equation}
+      B_{\nu} = \frac{2 h \nu^{3}}{c^{2}} \frac{1}{e^{h \nu/kT_{r}} -1}
+   \end{equation}
+\end{itemize}
+
+L.T.E: ($T_{e} = T_{k} = T_{i} \ne T_{r}$)
+
+cf) Brightness Temperature ($T_{b}$): Radio regime by Rayleigh-Jean's limit
+\begin{equation}
+   B_{\nu} = \frac{2 h \nu^{3}}{c^{2}} \frac{kT}{h\nu} ~~~~\textrm{or,} ~~~~ T_{b} = B_{\nu} \frac{c^{2}}{2\nu^{2}k}.
+\end{equation}
+
+%\bibliographystyle{apj}
+%\bibliography{citations}

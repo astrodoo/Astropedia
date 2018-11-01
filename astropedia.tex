@@ -1,0 +1,516 @@
+\documentclass[12pt, openany]{book}
+
+%\usepackage{microtype}
+
+%\input conditional.tex
+%\def\debugmode{}
+
+% include figures
+\usepackage{epsfig,wrapfig}
+
+% rotating table in the appendix
+%\usepackage{rotating}
+
+% prefer PDF to PNG
+\DeclareGraphicsExtensions{%
+  .pdf, .png}
+
+% Bibliographic Package
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{natbib}
+
+% code listings
+\usepackage{listings}
+
+%\graphicspath{{preface/}{intro/}{finite-volume/}{advection/}{burgers/}{diffusion/}{Euler/}{incompressible/}{multigrid/}{multiphysics/}{low_mach/}{radiation/}{pyro/}{higher-order/}}
+
+\usepackage{longtable}
+
+% AMS symbols
+\usepackage{amsmath,amssymb}
+
+% for forcing a figure to appear on a single page
+% see http://tex.stackexchange.com/questions/109219/force-position-of-full-page-sized-figure
+\usepackage{afterpage}
+
+% cancel
+%\usepackage{cancel}
+
+% Palatino font (and math symbols) -- looks nicer than the standard
+% LaTeX font
+\usepackage[osf]{mathpazo}
+\linespread{1.05}        % Palatino needs more leading
+%\usepackage[scaled]{helvet} % ss
+\usepackage{raleway}
+\normalfont
+\usepackage[T1]{fontenc}
+
+% URLs (special font for monospace)
+\usepackage{inconsolata}
+%\usepackage[T1]{fontenc}
+
+% footnotes use symbols
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% margins and paper size -- this needs to come before fncychap
+% see http://stackoverflow.com/questions/3729099/latex-paper-size
+%\usepackage[top=0.75in,
+%            bottom=0.75in,
+%            inner=0.65in,
+%            outer=0.65in]{geometry}
+\usepackage[a4paper, top=1.3in,
+            bottom=1in,
+            inner=0.9in,
+            outer=0.9in]{geometry}
+%\geometry{papersize={7.0in,10in}}
+%\geometry{papersize=A4}
+
+% crop marks (for printing)
+%\usepackage[
+%  noinfo,
+%  cam,
+%  cross,                % crosses as marks
+%  width=7.25in,         % the width of the galley
+%  height=10.25in,        % the height of the galley
+%  center                % actual page is centered on the galley
+%]{crop}
+
+
+% this needs to be done before the fncychap style, since that will
+% redo the chapter stuff
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+% chapter title styles
+%\usepackage[Bjornstrup]{fncychap}
+%\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont}
+%\ChTitleVar{\raggedleft\Large\sffamily\bfseries}
+
+\usepackage[PetersLenny]{fncychap}
+\ChNameVar{\fontsize{16}{16}\sffamily\selectfont}%usefont{OT1}{raleway}{m}{n}\selectfont}
+\ChNumVar{\fontsize{60}{62}\sffamily\selectfont}%\fontsize{60}{62}}\usefont{OT1}{raleway}{m}{n}\selectfont}
+\ChTitleVar{\Huge\bfseries\sffamily}
+\ChRuleWidth{1pt}
+
+% part page style
+% see http://tex.stackexchange.com/questions/6609/problems-with-part-labels-using-titlesec
+\usepackage{titlesec}
+
+\titleformat{\part}[display]
+   {\bfseries\sffamily\Huge\filcenter}
+   {{\partname{}} \thepart}
+   {0em}
+   {\hrule}
+
+
+% doosoo
+\usepackage{empheq}
+\usepackage{enumerate}
+\usepackage{deluxetable}
+\usepackage{mathtools}
+% for the bibliography in each chapter
+%\usepackage{chapterbib}
+
+% spacing the entire lines
+%\usepackage[nodisplayskipstretch]{setspace}
+%\setstretch{1.3}
+
+% spacing around the equations
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{1.5em}
+  \setlength\belowdisplayskip{1.5em}
+  \setlength\abovedisplayshortskip{1.5em}
+  \setlength\belowdisplayshortskip{1.5em}
+}
+\makeatother
+
+% hyperlinks -- load after fncychap
+%\usepackage{hyperref}
+\usepackage[colorlinks,citecolor=blue,linkcolor=black]{hyperref}
+%\usepackage[hyperpageref]{backref}
+%\renewcommand*{\backref}[1]{}% for backref < 1.33 necessary
+%\renewcommand*{\backrefalt}[4]{%
+%\ifcase #1 %
+%  No citations.%
+%\or
+%  (Cited on page #2)%
+%\else
+%  (Cited on pages #2)%
+%\fi
+%}
+
+% back references
+
+% color package
+\usepackage{xcolor}
+\definecolor{mygray}{gray}{0.5}
+
+% custom hrule for title page
+\newcommand{\HRule}{\rule{\linewidth}{0.125mm}}
+
+%\usepackage{xfrac}
+%% \newcommand{\sfrac}[2]{\mathchoice
+%%   {\kern0em\raise.5ex\hbox{\the\scriptfont0 #1}\kern-.15em/
+%%    \kern-.15em\lower.25ex\hbox{\the\scriptfont0 #2}}
+%%   {\kern0em\raise.5ex\hbox{\the\scriptfont0 #1}\kern-.15em/
+%%    \kern-.15em\lower.25ex\hbox{\the\scriptfont0 #2}}
+%%   {\kern0em\raise.5ex\hbox{\the\scriptscriptfont0 #1}\kern-.2em/
+%%    \kern-.15em\lower.25ex\hbox{\the\scriptscriptfont0 #2}}
+%%   {#1\!/#2}}
+
+
+% footer
+%% \usepackage{fancyhdr}
+%% \pagestyle{fancy}
+%% \fancyfoot[LO,LE]{\footnotesize \sffamily \color{mygray} M.\ Zingale---Notes on the Euler equations}
+%% \fancyfoot[RO,RE]{\footnotesize \sffamily \color{mygray} (\today)}
+%% \fancyfoot[CO,CE]{\thepage}
+%% \fancyhead{}
+%% \renewcommand{\headrulewidth}{0.0pt}
+%% \renewcommand{\footrulewidth}{0.0pt}
+
+
+% don't make the chapter/section headings uppercase.  See the fancyhdr
+% documentation (section 9)
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection---#1}}
+
+% don't put a header on blank pages, see
+% http://www.latex-community.org/forum/viewtopic.php?f=4&p=51559
+% change ``plain'' to ``empty'' to eliminate the page number
+\makeatletter
+\renewcommand*\cleardoublepage{\clearpage\if@twoside
+\ifodd\c@page\else
+\hbox{}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+% no page number of the part page
+% http://latex.org/forum/viewtopic.php?f=47&t=4293&p=16738
+\makeatletter
+\renewcommand\part{%
+   \if@openright
+     \cleardoublepage
+   \else
+     \clearpage
+   \fi
+   \thispagestyle{empty}%
+   \if@twocolumn
+     \onecolumn
+     \@tempswatrue
+   \else
+     \@tempswafalse
+   \fi
+   \null\vfil
+   \secdef\@part\@spart}
+\makeatother
+
+% skip a bit of space between paragraphs, to enhance readability
+\usepackage{parskip}
+
+% captions
+%\usepackage{caption}
+%\renewcommand{\captionfont}{\footnotesize}
+%\renewcommand{\captionlabelfont}{\footnotesize}
+%\setlength{\captionmargin}{3em}
+
+%-----------------------------------------------------------------------------
+% define a new environment for exercises
+%\newcounter{exercise}    % simple way -- no TOC list
+% toclot allows us to make a list of exercises
+% the new environment stuff came from http://www.dickimaw-books.com/latex/novices/html/newenv.html
+\usepackage{tocloft}
+\newcommand{\listexercisename}{List of Exercises}
+
+% the [chapter] argumenet here means that we reset the numbers each chapter
+% exc is the short name we give to this new list
+\newlistof[chapter]{exercise}{exc}{\listexercisename}
+\usepackage{changepage}   % used to adjust the margins within the environment
+
+% environment name, with optional argument for display in the list of
+% exercises
+\newenvironment{exercise}[1][]
+{% begin code
+  %
+  % this indents our text from the left and right
+  \begin{adjustwidth}{1.0cm}{1.0cm}%
+  %
+  % this skips a line before
+  %\par\vspace{\baselineskip}\noindent
+  %
+  % this increments our counter
+  \refstepcounter{exercise}%
+  \begin{tcolorbox}[enhanced, breakable, title={\sffamily Exercise \theexercise}]
+  %
+  % this displays the exercise number and starts italics
+  \begin{itshape}%
+  %
+  % this adds an entry to our custom List of Exercises
+  \addcontentsline{exc}{exercise}{\protect\numberline{\theexercise}~~ #1}
+}%
+{% end code -- this is done at the end of the environment
+  %
+  % stop the italics
+  \end{itshape}%
+  %
+  \end{tcolorbox}
+  % this stops our custom margins
+  \end{adjustwidth}%
+  %
+  % this skips a line at the end
+  %\vspace{\baselineskip}\ignorespacesafterend
+}
+
+% this makes the List of Exercises have a line break before each chapter,
+% just like in the main ToC.
+%
+% this has a bug -- it does not omit the space if the chapter has 0 exercises
+%\usepackage{etoolbox}
+%\preto\section{%
+%  \ifnum\value{chapter}=1{}\else   % don't skip before Ch 1
+%    \ifnum\value{section}=0\addtocontents{exc}{\vskip10pt}\fi
+%  \fi
+%}
+
+% Doosoo -->
+% solution for the disappearance of section numbers 
+% with \usepackage{titlesec}
+% https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+% indent these the standard amount for a chaptered section
+\setlength{\cftexerciseindent}{1.5em}
+
+%-----------------------------------------------------------------------------
+
+% license
+\usepackage{ccicons}
+
+% computer keyboard symbol
+%\usepackage{marvosym}
+
+% for dotted lines in the matrics/arrays
+%\usepackage{arydshln}
+
+
+
+% fonts for TOC, list of figures, etc
+\renewcommand*\listfigurename{\bf\textsf{List of Figures}}
+\renewcommand*\listexercisename{\bf\textsf{List of Exercises}}
+\renewcommand*\contentsname{\bf\textsf{Table of Contents}}
+
+% short table of contents
+\usepackage{shorttoc}
+
+% pack more figures on a page
+\usepackage{float}
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+
+\usepackage{multirow}
+
+% MarginPars
+\setlength{\marginparwidth}{0.75in}
+\newcommand{\aMarginPar}[1]{\marginpar{\vskip-\baselineskip\raggedright\tiny\sffamily\hrule\smallskip{\color{red}#1}\par\smallskip\hrule}}
+\newcommand{\MarginPar}[1]{\ifdefined\debugmode\aMarginPar{#1}\fi}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(-0,-0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+%\includegraphics[width=\paperwidth,%height=\paperheight,%
+%keepaspectratio]{images/crop_cover.png}%
+\vfill
+}}}
+
+
+\usepackage[many]{tcolorbox}
+
+\newtcolorbox{mybox}[1][]{
+    width=\textwidth,
+    arc=0mm,
+    auto outer arc,
+    boxsep=0.05cm,
+    toprule=2pt,
+    leftrule=2pt,
+    bottomrule=2pt,
+    rightrule=2pt,
+    colframe=black,
+    colback=white,
+    fontupper=\centering\fontsize{28pt}{28pt}\sffamily,
+    breakable,
+    nobeforeafter,
+    enhanced jigsaw,
+    opacityframe=0.7,
+    opacityback=0.75,
+    title={\hfill\sffamily Private Astrophysics in a Nutshell},
+}
+
+\pdfpageattr{/Group <</S /Transparency /I true /CS /DeviceRGB>>}
+
+
+\input define.tex
+
+\begin{document}
+
+\AddToShipoutPicture*{\BackgroundPic}
+
+\frontmatter
+
+\begin{titlepage}
+
+\ \\[1.25in]
+
+%% \HRule\\[0.5em]
+%% {\Huge \textsf{{
+%% Lecture Notes on\\[0.1em]
+%% Computational Hydrodynamics\\[0.3em]
+%% for Astrophysics}}
+%% }
+%% \HRule
+%% \\[2em]
+%
+%% {\Large \sf  Michael Zingale} \\ {\sf Stony Brook University}
+%
+%% \begin{mybox}[]
+%% \vskip 3mm
+%% {Introduction to} \\%[-0.75em]
+%% {Computational Hydrodynamics \\%[-0.75em]
+%% for Astrophysics}
+%% \vspace{0.5em}
+%% \end{mybox}
+
+{\sffamily \color{white}%
+\begin{center}
+\fontsize{22}{18}\selectfont
+Collections of \\
+\fontsize{32}{26}\selectfont
+Astrophysical fomulae and notes
+\end{center}
+}
+\vspace{0.5em}
+
+\vfill
+
+
+{\color{red}\sffamily Private Astrophyiscs in a Nutshell \hfill\color{black} Doosoo Yoon}
+
+\end{titlepage}
+
+\pagestyle{plain}
+
+\null \vfill
+
+\noindent \ccCopy\ 2018 Doosoo Yoon \\
+\noindent \today
+
+%\url{https://github.com/Open-Astrophysics-Bookshelf/numerical_exercises}
+
+%\noindent \ccbyncsa \\
+%\noindent This work is licensed under the Creative Commons
+%Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+%4.0) license.
+
+\clearpage
+
+%\shorttoc{Chapter Listing}{0}
+
+%\clearpage
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\clearpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{list of figures}
+
+\clearpage
+
+%\listofexercise
+%\addcontentsline{toc}{chapter}{list of exercises}
+
+%\clearpage
+
+%\chapter*{preface}
+%\chaptermark{preface}
+%\addcontentsline{toc}{chapter}{preface}
+
+%\input preface/preface.tex
+
+%\clearpage
+
+\pagestyle{headings}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection---#1}}
+
+%\renewcommand\thechapter{\arabic{chapter}}
+%\renewcommand\thesection{\thechapter.\arabic{section}}
+%\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+%\setcounter{subsection}{3}
+%\setcounter{tocdepth}{6}
+%\setcounter{secnumdepth}{6}
+\renewcommand{\thesection}{\arabic{section}}
+
+
+% put the git hash on the first page of each chapter -- see section
+% 7 of the fancyhdr docs to see how to override the plain
+% style
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\thepage} % except the center
+%\fancyfoot[L]{\scriptsize git version: \input git_info.tex $\ldots$}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\mainmatter
+
+%\part{Basics}
+
+   \include{Radiation/radiation}
+   \include{Fluid/fluid}
+   \include{Thermo/thermo}
+   \include{ISM/ism}
+   \include{Gravity/gravity}
+   \include{Galactic/galactic}
+   \include{HighEnergy/highenergy}
+   \include{Cosmology/cosmology}
+   \include{Particle/particle}
+   \include{Mathematics/mathematics}
+%   \include{Numerical/numerical}
+   \include{Instrument/instrument}
+
+   \appendix
+   \include{Appendix/appendix}
+
+   \include{Etc/etc}
+
+\backmatter
+
+%\addcontentsline{toc}{chapter}{References}
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+\bibliographystyle{apj}
+\bibliography{citations}
+
+\end{document}

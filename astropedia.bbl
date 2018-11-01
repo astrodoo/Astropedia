@@ -1,0 +1,34 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{binney} \& {tremaine}(1987)}]{Binney:87}
+{binney}, j., \& {tremaine}, s. 1987, {galactic dynamics}
+
+\bibitem[{{Castor} {et~al.}(1975){Castor}, {McCray}, \& {Weaver}}]{Castor:75}
+{Castor}, J., {McCray}, R., \& {Weaver}, R. 1975, \apjl, 200, L107
+
+\bibitem[{{Dalgarno} \& {McCray}(1972)}]{Dalgarno:72}
+{Dalgarno}, A., \& {McCray}, R.~A. 1972, \araa, 10, 375
+
+\bibitem[{{Kim} \& {Pellegrini}(2012)}]{Kim:13}
+{Kim}, D.-W., \& {Pellegrini}, S., eds. 2012, Astrophysics and Space Science
+  Library, Vol. 378, {Hot Interstellar Matter in Elliptical Galaxies}
+
+\bibitem[{{Maoz}(2009)}]{Maoz}
+{Maoz}, S. 2009, {Astrophysics in a Nutshell}
+
+\bibitem[{{Okuda} {et~al.}(1997){Okuda}, {Fujita}, \& {Sakashita}}]{Okuda:97}
+{Okuda}, T., {Fujita}, M., \& {Sakashita}, S. 1997, \pasj, 49, 679
+
+\bibitem[{{Schure} {et~al.}(2009){Schure}, {Kosenko}, {Kaastra}, {Keppens}, \&
+  {Vink}}]{Schure:09}
+{Schure}, K.~M., {Kosenko}, D., {Kaastra}, J.~S., {Keppens}, R., \& {Vink}, J.
+  2009, \aap, 508, 751
+
+\bibitem[{{shakura} \& {sunyaev}(1973)}]{Shakura:73}
+{shakura}, n.~i., \& {sunyaev}, r.~a. 1973, \aap, 24, 337
+
+\bibitem[{{Stone} {et~al.}(1999){Stone}, {Pringle}, \& {Begelman}}]{Stone:99}
+{Stone}, J.~M., {Pringle}, J.~E., \& {Begelman}, M.~C. 1999, \mnras, 310, 1002
+
+\end{thebibliography}

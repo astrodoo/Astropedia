@@ -1,0 +1,236 @@
+\chapter{Fluid Dynamics}
+
+\section{Fluid Dynamics}
+
+\begin{itemize}
+   \item $\partial / \partial t$: the rate of change of some physical quantity with respect to time at a 
+fixed position in space.
+
+   \item $D /Dt$ (the material derivative): the rate of change of some quantity with respect to time but
+traveling along with the fluid. 
+
+Let $f$ be any quantity (e.g. density), then
+\begin{equation}\label{eq:lageu}
+   \frac{Df}{Dt} = \frac{\partial f}{\partial t} + u \cdot \nabla f,
+\end{equation}
+where $u(r,t)$ is the velocity of the fluid at position $r$ and time $t$.
+
+\bigskip
+\subsection{Conservations}
+
+\subsubsection{The continuity equation}
+Consider a volume $V$, which is fixed in space. The total mass of fluid in V is $\int_{V} \rho d V$.
+The time derivative of the mass in $V$ is the mass flux into V across its surface S, i.e.
+\begin{equation}
+   \frac{d}{dt}\int_{V} \rho dV = - \int_{S} (\rho \ub)\cdot \nb \, dS,
+\end{equation}
+where $\nb$ is the outward normal to the surface S. By using the divergence theorem, we obtain
+\end{itemize}
+
+\begin{equation}
+   \int_{V} \frac{\partial \rho}{\partial t} d V = - \int_{S} \rho \ub \cdot \nb dS
+   =-\int_{V} \nabla \cdot (\rho \ub) dV.
+\end{equation}
+\begin{equation}\label{eq:continuity1}
+  \therefore \, \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \ub) = 0.
+\end{equation}
+This is the continuity(or mass conservation) equation. Using eq \ref{eq:lageu} this can also be 
+written as 
+\begin{equation}\label{eq:continuity2}
+   \frac{D \rho}{D t} + \rho \nabla \cdot \ub=0.
+\end{equation}
+
+\bigskip
+\subsubsection{The momentum equation}
+By analogy, one can derive a momentum equation, or equation of motion, for the fluid by considering
+the rate of change of the total momentum of the fluid inside a volume V. The momentum of the fluid
+in V is $\int_{V} \rho \ub \,dV$, and the rate of change of this momentum is equal to the net
+force acting on the fluid in volume V. These net force consists of two kinds; one is body force, such
+as gravity, which act on the particles inside V, and the other is surface force - forces exerted on 
+the surface S of V by the surrounding fluid. 
+
+The former body force can be expressed as
+\begin{equation}
+  \int_{V} \rho \fb \, dV,
+\end{equation}
+where $\fb$ is the body force per unit mass (\ie dimension: acceleration). 
+The latter surface force is
+\begin{equation}
+  -\int_{S} P \nb\,dS,
+\end{equation}
+where P is the pressure. Equating force to change of momentum we obtain
+\begin{equation}
+  \frac{d}{dt} \int_{V} \rho \ub \,dV = -\int_{S} P \nb \,dS
+                                        +\int_{V} \rho \fb \, dV.
+\end{equation}
+Since $\rho \, dV$, the mass of a fluid element, is invariant following the motion,
+\begin{equation}
+  \frac{d}{dt} \int_{V} \rho \ub \,dV = \int_{V} \rho \frac{D\ub}{Dt} \,dV 
+\end{equation}
+and hence, applying the divergence theorem to the surface integral, we obtain
+\begin{equation}
+  \int_{V} \rho \frac{D\ub}{Dt} \,dV = \int_{V} \left( -\nabla P + \rho \fb \right)\, dV.
+\end{equation}
+\begin{equation}\label{eq:momentum}
+  \therefore \, \rho \frac{D\ub}{Dt} = \rho \left( \frac{\partial \ub}{\partial t} 
+              + \left( \ub \cdot \nabla \right) \ub \right) = -\nabla P + \rho \fb.
+\end{equation}
+This is the momentum equation for an inviscid fluid. Taking into account the viscous forces
+would add the right-hand side of the momentum equation with an additional term 
+$\mu \left( \nabla^{2} \ub + \frac{1}{3}\nabla (\nabla \cdot \ub)\right)$, where
+$\mu$ is dynamic viscosity.
+
+\bigskip
+\subsubsection{The Energy equation}
+Taking a dot product of the equation of motion for a fluid, eq. \ref{eq:momentum}, with the fluid
+velocity $\ub$ yields
+
+\begin{equation}\label{eq:kinE}
+   \frac{D}{Dt}\left( \frac{1}{2} \ub^2 \right) = -\frac{1}{\rho} \ub \cdot \nabla P
+      + \ub \cdot \fb.
+\end{equation}
+Eq. \ref{eq:kinE} says that the rate of change of the kinetic energy of a unit mass of fluid
+is equal to the rate at which work is done on the fluid by pressure and body forces. This is 
+sometimes called the {\bf mechanical energy equation}.
+
+An equation for the total energy - kinetic and internal thermal energy - can be derived in the same
+manner as was the momentum equation. Let the internal energy per unit mass of fluid be U. Then the 
+rate of change of kinetic plus internal energy of a material volume (\ie one moving with the fluid) 
+must be equal to the rate of work done on the fluid by surface and body forces, plus the rate at
+which heat is added to the fluid. Heat can be added in two ways: one is by its being generated at
+a rate $\varepsilon$ per unit mass within the fluid volume (\eg by nuclear reactions), while the 
+second is by the flux of heat {\bf F} into the volume from the surroundings (\eg by radiation). Thus
+\begin{equation}
+   \frac{d}{dt}\int_{V}\left( \frac{1}{2} \ub^2 + U \right) \rho \, dV
+  = \int_{S}\ub \cdot (-P \nb)\, dS + \int_{V} \ub \cdot \fb \rho\,dV
+   +\int_{V}\varepsilon\rho\,dV - \int_{S} \Fb \cdot \nb \,dS.
+\end{equation}
+
+In the same way as for the momentum equation, one rewrites all the surface integrals in this  equation
+as volume integrals, using the divergence theorem. The resulting equation holds for an arbitrary 
+volume V and so one deduces that
+\begin{equation}\label{eq:totE}
+  \rho \left( \frac{D}{Dt} \left( \frac{1}{2} \ub^2 + \frac{DU}{Dt} \right) \right)
+   = -\nabla \cdot (P \ub) + \rho \ub \cdot \fb + \rho \varepsilon - \nabla \cdot \Fb.
+\end{equation}
+One can derive an equation for the thermal energy alone by dividing eq. \ref{eq:totE} by the 
+density and then subtracting the kinetic energy equation, eq. \ref{eq:kinE}:
+\begin{equation}\label{eq:thermalE}
+  \frac{DU}{Dt} = \frac{P}{\rho^2}\frac{D\rho}{Dt}+\varepsilon-\frac{1}{\rho}\nabla\cdot \Fb.
+\end{equation}
+Note that the divergence of $\nabla \cdot \ub$ has been replaced by $-\rho^{-1} D\rho/Dt$ using the 
+continuity equation, eq. \ref{eq:continuity2}.
+
+\bigskip
+\subsection{Shock}
+\subsubsection{Basic properties}
+
+\noi{\bf ideal gas}
+
+The pressure is
+\begin{equation}
+    P = n\,k\,T = \frac{\rho\,k\,T}{\mu\,m_{H}}
+\end{equation}
+where $\mu$ is mean molecular weight.
+
+\medskip
+\noi{\bf Mean molecular weight}
+The mean particle mass is
+\begin{equation}
+    \bar{m} = \frac{n_{1}m_{1} + n_{2}m_{2} + n_{3}m_{3}+...}{n_{1}+n_{2}+n_{3}+...} = \frac{\rho}{n} = \mu\,m_{H},
+\end{equation}
+where $\mu$ is mean molecular weight.
+
+The abundance of medium can be expressed as $(X,Y,Z)$, which represent hydrogen, helium and heavy
+elements, respectively.  By definition, the summation of them should be $\displaystyle\sum_{i}
+X_{i} = X+Y+Z = 1$. The number density of hydrogen, helium, or an element of atomic mass number $A$ will be
+\begin{equation}
+    n_{H} = \frac{X\,\rho}{m_{H}},~~n_{He}=\frac{Y\,\rho}{4\,m_{H}},~~n_{A}=\frac{Z_{A}\,\rho}{A\,m_{H}}
+\end{equation}
+
+In neutral limit, heavy elements is negligible. The number density of gas will be
+\begin{equation}
+    n = n_{H} + n_{He} + n_{A} \simeq n_{H} + n_{He} = \frac{\rho}{m_{H}} \left( X+\frac{Y}{4} \right),
+\end{equation}
+in other word, the mean molecular weight will be
+\begin{equation}
+    \frac{1}{\mu} = X+\frac{Y}{4}.
+\end{equation}
+
+
+In full-ionization limit, hydrgen produces 2 atoms (1 ion + 1 electron) and helium produces 3 atoms (1 ion + 2 electrons) 
+and the heavy enough atoms produce the atomic number (ions+electrons) close to $A/2$.
+\begin{equation}
+    n \simeq n_{H} + n_{He} + \sum \frac{A}{2}\,n_{A} = \frac{\rho}{m_{H}} \left( 2X+\frac{3Y}{4}+\frac{1}{2}Z \right),
+\end{equation}
+in other word, the mean molecular weight will be
+\begin{equation}
+    \frac{1}{\mu} = 2X+\frac{3Y}{4}+\frac{1}{2}Z = \frac{1}{2}\left( 3X + \frac{Y}{2} + 1 \right).
+\end{equation}
+
+For instance, if we apply the solar abundance (X=0.7, Y=0.28, Z=0.02) to the formula in two limits above,
+the mean molecular weight will be $\mu_{\rm solar,non-ionized}=1.3$ \& $\mu_{\rm solar,ionized} =0.62$.
+
+The general expression of mean molecular weight is
+\begin{equation}
+    \frac{1}{\mu} = \frac{1}{\mu_{I}} + \frac{1}{\mu_{e}} = \sum\frac{X_{i}}{A_{i}} + \sum\frac{f_{i}Z_{i}X_{i}}{A_{i}},
+\end{equation}
+where $\mu_{I},\,\mu_{e}$ is the mean molecular weight of ion and electron, respectively, $f_{i}$ is an ionization fraction.
+
+
+\medskip
+\noi{\bf Sound Speed $C_{s}$}
+
+In adiabatic situation $P = A\, \rho^{\gamma}$, where $A$ is constant, the sound speed is
+\begin{equation}
+    C_{s}^{2} = \frac{\partial P}{\partial \rho} = \gamma \frac{P}{\rho}.
+\end{equation}
+
+In isothermal situation ($\gamma=1$),
+\begin{equation}
+    C_{s}^{2} = \frac{P}{\rho} = \frac{k\,T}{\mu\,m_{H}}.
+\end{equation}
+
+
+\subsubsection{Rankin-Hugoniot Condition}
+According to the conservation equations for mass, momentum and enery, the flow across
+the shock front has to satisfy the following jump conditions:
+
+\begin{eqnarray}
+    \rho_{2}\,u_{2} &=& \rho_{1}\,u_{1}    \\
+    \rho_{2}\,u_{2}^{2} + P_{2} &=& \rho_{1}\,u_{1}^{2} + P_{1}    \\
+    \frac{1}{2}u_{2}^{2} + h_{2} &=& \frac{1}{2}u_{1}^{2} + h_{1}
+\end{eqnarray}
+where the subscription 1 and 2 represent upstream and downstream, respectively, and 
+$h$ denotes the specific enthalpy which for a perfect gas satisfies the constituve relations:
+\begin{equation}
+    h=\frac{\gamma}{\gamma-1}\frac{P}{\rho} = \frac{\gamma}{\gamma-1}\frac{k\,T}{\mu\,m_{H}}.
+\end{equation}
+The upstream Mach number $\mach_{1} \equiv u_{1}/C_{s}$, where the sound speed of 
+$C_{s} = \sqrt{\gamma\,P/\rho}$, the ratio of physical properties between downstream and upstream will be:
+\begin{eqnarray}
+    \frac{\rho_{2}}{\rho_{1}} &=& \frac{u_{1}}{u_{2}} = \frac{(\gamma+1)\mach_{1}^{2}}{(\gamma+1) + (\gamma-1)(\mach_{1}^{2}-1)} \\
+    \frac{P_{2}}{P_{1}} &=& \frac{(\gamma+1) + 2\gamma(\mach_{1}^{2}-1)}{\gamma+1} \\
+    \frac{T_{2}}{T_{1}} &=& \frac{[ (\gamma+1) + 2\gamma(\mach_{1}^{2}-1)] [(\gamma+1) + (\gamma-1)(\mach_{1}^{2}-1)]}{(\gamma+1)^{2}\mach_{1}^{2}}.
+\end{eqnarray}
+Note that $P_{2} \geq P_{1},\, \rho_{2} \geq \rho_{1}$, and $T_{2}\geq T_{1}$ if $\mach_{1} \geq 1$ (supersonic upstream). In the limit of a very strong shock ($\mach_{1}\rightarrow \infty$),
+the density jump is bounded by a finite value $(\gamma+1)/(\gamma-1)$, which is equals 4 if $\gamma=5/3$.
+Simultaneously, the flow velocity slows down to 1/4 of $u_{1}$. In this limit, the pressure
+and temperature jumps have no bound. 
+
+
+\bigskip
+\subsection{Instabilities}
+\subsubsection{Thermal Instability}
+\subsubsection{Gravitational Instability: Jean's Instability}
+See \S~\ref{subsubsec:Jean}.
+\subsubsection{Rayleigh-Taylor Instability}
+\subsubsection{Kelvin-Helmholtz Instability}
+
+\bigskip
+\subsection{Turbulence}
+
+\bigskip
+\subsection{Magneto-hydrodynamics}
+%\bibliographystyle{apj}
+%\bibliography{citations}

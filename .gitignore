@@ -1,1 +1,7 @@
-compile_report.sh
+compile*
+*aux
+*blg
+*lof
+*log
+*out
+*toc
